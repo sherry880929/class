@@ -1,0 +1,63 @@
+#include<stdio.h>  
+#include<string.h>  
+#include<stdlib.h>  
+#include<ctype.h> 
+int main()  
+{  
+    int i,len,maxnum=0,minnum=0,cnt=0;  
+    int n[10],num;  
+    char temp[1000];  
+    while(fgets(temp,1000,stdin)!=NULL){  
+        len=strlen(temp);    
+        maxnum=0;  
+        minnum=0;  
+        cnt=0;  
+        for(i=0;i<len;i++){    
+            if(isdigit(temp[i])){    
+                num=atoi(temp+i);    
+                n[cnt]=num;    
+                cnt++;    
+            }    
+            while(isdigit(temp[i])&&i<len) i++;  
+        }  
+        max(n,cnt);  
+        for(i=0;i<cnt;i++){  
+            maxnum=(maxnum+n[i])*10;  
+        }  
+        maxnum=maxnum/10;  
+        min(n,cnt);  
+        for(i=0;i<cnt;i++){  
+            minnum=(minnum+n[i])*10;  
+        }  
+        minnum=minnum/10;  
+        printf("%d\n",maxnum-minnum);  
+    }   
+    return 0;  
+}  
+  
+void max(int a[], int cnt)  
+{  
+    int i,j,temp;  
+    for(i=0;i<cnt-1;i++){  
+        for(j=0;j<cnt-i-1;j++){  
+            if(a[j]<a[j+1]){  
+                temp=a[j];  
+                a[j]=a[j+1];  
+                a[j+1]=temp;  
+            }  
+        }                 
+    }  
+}  
+void min(int a[], int cnt)  
+{  
+    int i,j,temp;  
+    for(i=0;i<cnt-1;i++){  
+        for(j=0;j<cnt-i-1;j++){  
+            if(a[j]>a[j+1]){  
+                temp=a[j];  
+                a[j]=a[j+1];  
+                a[j+1]=temp;  
+            }  
+        }                 
+    }  
+}  
