@@ -1,0 +1,17 @@
+#include<stdio.h>  
+int main()  
+{  
+    double n[10];  
+    double df,total=0;  
+    int i=0,cnt=0;  
+    while((scanf("%lf",&df))!=EOF){  
+        n[i]=df;  
+        i++;  
+        cnt++;  
+    }  
+    for(i=0;i<cnt;i++){  
+        total+=n[i]*n[i];  
+    }  
+    printf("%lf\n",total);  
+    return 0;  
+}
