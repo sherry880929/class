@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main(){
+  int n = 0;
+  scanf("%d",&n);
+  if((3<=n)&&(n<=5))printf("Spring\n");
+  else if((6<=n)&&(n<=8))printf("Summer\n");
+  else if((9<=n)&&(n<=11))printf("Autumn\n");
+  else printf("Winter\n");
+  return 0;
+}
