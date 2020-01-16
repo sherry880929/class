@@ -1,0 +1,18 @@
+#include<stdio.h>  
+  
+int main()  
+{  
+    int n,i,j,a[128],f=0;  
+    scanf("%d",&n);  
+    for(i=0;i<n;i++){  
+        scanf("%d",&a[i]);  
+    }  
+    for(i=0;i<n;i++){  
+        for(j=i+1;j<n;j++){  
+            if(a[i]==a[j]) f=1;  
+        }  
+    }  
+    if(f==0) printf("1\n");  
+    else if(f==1) printf("0\n");  
+    return 0;     
+}  
