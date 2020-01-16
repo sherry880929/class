@@ -1,0 +1,21 @@
+#include<stdio.h>  
+#include<string.h>  
+int main()  
+{  
+    char a[128],b[128];  
+    int i,j=0,f=0,len;  
+    fgets(a,128,stdin);  
+    len=strlen(a);  
+    a[len-1]='\0';  
+    for(i=len-2;i>=0;i--){  
+        b[j]=a[i];  
+        j++;  
+    }  
+    b[j]='\0';  
+    if(strcmp(a,b)==0){  
+        f=1;  
+    }  
+    if(f==1) printf("YES\n");  
+    else printf("NO\n");  
+    return 0;   
+} 
